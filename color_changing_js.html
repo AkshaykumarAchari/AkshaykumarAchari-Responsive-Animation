@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive JavaScript Task</title>
+    <style>
+      /* General Styling */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: white;
+      }
+
+      .c1 {
+        background: linear-gradient(to right, blue, green);
+      }
+      .c2 {
+        background: linear-gradient(
+          to right,
+          rgb(215, 248, 70),
+          rgb(255, 36, 36)
+        );
+      }
+      .cir3 {
+        background: linear-gradient(
+          to right,
+          rgb(255, 213, 213),
+          rgb(242, 0, 255)
+        );
+      }
+      .cir4 {
+        background: linear-gradient(
+          to right,
+          rgb(3, 246, 201),
+          rgb(98, 0, 128)
+        );
+      }
+      .cir5 {
+        background: linear-gradient(to right, rgb(255, 85, 85), rgb(0, 6, 128));
+      }
+      .all {
+        background: linear-gradient(black, black);
+      }
+
+      #r1 {
+        background: linear-gradient(to right, rgb(85, 85, 255), green);
+        height: 50px;
+        width: 50px;
+        border: 10px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 10%;
+        left: 2%;
+      }
+      #r1:hover {
+        height: 70px;
+        width: 70px;
+        border: 15px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 9%;
+        left: 1%;
+      }
+      #r2 {
+        background: linear-gradient(
+          to right,
+          rgb(215, 248, 70),
+          rgb(255, 36, 36)
+        );
+        height: 50px;
+        width: 50px;
+        border: 10px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 25%;
+        left: 2%;
+      }
+      #r2:hover {
+        height: 70px;
+        width: 70px;
+        border: 15px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 24%;
+        left: 1%;
+      }
+      #r3 {
+        background: linear-gradient(
+          to right,
+          rgb(255, 213, 213),
+          rgb(242, 0, 255)
+        );
+        height: 50px;
+        width: 50px;
+        border: 10px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 40%;
+        left: 2%;
+      }
+      #r3:hover {
+        height: 70px;
+        width: 70px;
+        border: 15px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 39%;
+        left: 1%;
+      }
+      #r4 {
+        background: linear-gradient(
+          to right,
+          rgb(3, 246, 201),
+          rgb(98, 0, 128)
+        );
+        height: 50px;
+        width: 50px;
+        border: 10px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 55%;
+        left: 2%;
+      }
+      #r4:hover {
+        height: 70px;
+        width: 70px;
+        border: 15px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 54%;
+        left: 1%;
+      }
+      #r5 {
+        background: linear-gradient(to right, rgb(255, 85, 85), rgb(0, 6, 128));
+        height: 50px;
+        width: 50px;
+        border: 10px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 70%;
+        left: 2%;
+      }
+      #r5:hover {
+        height: 70px;
+        width: 70px;
+        border: 15px white solid;
+        border-radius: 50%;
+        position: absolute;
+        top: 69%;
+        left: 1%;
+      }
+
+      /* Screen Div */
+      #screen {
+        background-color: white;
+        height: 200px;
+        width: 450px;
+        border-radius: 40px;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        padding: 10px;
+        color: black;
+        text-align: center;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        #r1,
+        #r2,
+        #r3,
+        #r4,
+        #r5 {
+          height: 40px;
+          width: 40px;
+          border: 5px white solid;
+        }
+        #r1:hover,
+        #r2:hover,
+        #r3:hover,
+        #r4:hover,
+        #r5:hover {
+          height: 55px;
+          width: 55px;
+          border: 10px white solid;
+        }
+
+        #screen {
+          width: 90%;
+          height: 150px;
+          font-size: 16px;
+        }
+
+        #cl1 {
+          height: 40px;
+          width: 80px;
+          font-size: 16px;
+          bottom: 20%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #r1,
+        #r2,
+        #r3,
+        #r4,
+        #r5 {
+          height: 30px;
+          width: 30px;
+          border: 4px white solid;
+        }
+        #r1:hover,
+        #r2:hover,
+        #r3:hover,
+        #r4:hover,
+        #r5:hover {
+          height: 45px;
+          width: 45px;
+          border: 8px white solid;
+        }
+
+        #screen {
+          width: 95%;
+          height: 120px;
+          font-size: 14px;
+        }
+
+        #cl1 {
+          height: 35px;
+          width: 70px;
+          font-size: 14px;
+          bottom: 15%;
+        }
+      }
+    </style>
+  </head>
+  <body id="bodie">
+    <!-- Circles -->
+    <div id="r1" onclick="btn1()"></div>
+    <div id="r2" onclick="btn2()"></div>
+    <div id="r3" onclick="btn3()"></div>
+    <div id="r4" onclick="btn4()"></div>
+    <div id="r5" onclick="btn5()"></div>
+
+    <!-- Clear Button -->
+    <button id="cl1" onclick="BTM()"><b>Clear</b></button>
+
+    <!-- Screen -->
+    <div id="screen">
+      <h1 id="s">
+        <br /><b>Color is: <span id="write"></span></b>
+      </h1>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      alert("Welcome to the theme changer!");
+      function btn1() {
+        document.getElementById("write").textContent = "(blue + green)";
+        document.getElementById("bodie").classList.add("c1");
+      }
+      function btn2() {
+        document.getElementById("write").textContent = "(yellow + red)";
+        document.getElementById("bodie").classList.add("c2");
+      }
+      function btn3() {
+        document.getElementById("write").textContent = "(white + pink)";
+        document.getElementById("bodie").classList.add("cir3");
+      }
+      function btn4() {
+        document.getElementById("write").textContent = "(sky blue + blue)";
+        document.getElementById("bodie").classList.add("cir4");
+      }
+      function btn5() {
+        document.getElementById("write").textContent = "(pink + blue)";
+        document.getElementById("bodie").classList.add("cir5");
+      }
+      function BTM() {
+        document.getElementById("write").textContent = "";
+        document.getElementById("bodie").classList.add("all");
+      }
+    </script>
+  </body>
+</html>
